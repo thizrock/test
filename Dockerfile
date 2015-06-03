@@ -1,5 +1,9 @@
-FROM ubuntu:14.04
-RUN apt-get update && apt-get install -y \
-    nano \
-    apache2
-EXPOSE 80
+FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install nano
+RUN apt-get install wget
+RUN software-properties-common
+RUN add-apt-repository ppa:webupd8team/java
+RUN apt-get update
+RUN apt-get install oracle-java8-installer
